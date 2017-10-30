@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.8.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'gs-rest-service'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    //使用 Controller 的时候需要引入 web 包
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('com.jayway.jsonpath:json-path')
+    //gson
+    compile 'com.google.code.gson:gson:2.3.1'
+    //mysql
+    compile 'mysql:mysql-connector-java'
+    //配置mybatis 数据源
+    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.0")
+    testCompile('org.mybatis.spring.boot:mybatis-spring-boot-starter-test:1.3.0')
+        
+}
+
