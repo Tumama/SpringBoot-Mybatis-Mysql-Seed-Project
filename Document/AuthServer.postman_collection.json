@@ -1,0 +1,138 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AuthServer",
+		"_postman_id": "d4b9ea05-e8cd-c6bf-7ba0-e0d509b166fe",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/v1/auth?name=Tumama&password=123456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tumama",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "arr",
+							"value": "",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "updateAuth",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/v1/auth?userID=1&token=123456789",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "userID",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "token",
+							"value": "123456789",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/v1/auth?token=123456789&userID=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "123456789",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "userID",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
